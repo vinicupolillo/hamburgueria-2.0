@@ -10,7 +10,7 @@ export const CartProvider = ({ children }) => {
     if (!findProduct) {
       setCart([...cart, item]);
       localStorage.setItem("@Hamburgueria: cart", JSON.stringify(cart));
-      toast.success("Produto adicionado com sucesso", {
+      toast.success("Produto adicionado ao carrinho", {
         position: "bottom-right",
         autoClose: 2500,
         hideProgressBar: false,
@@ -35,6 +35,15 @@ export const CartProvider = ({ children }) => {
     const newCart = cart.filter((itemInCart) => itemInCart.id !== item.id);
     localStorage.setItem("@Hamburgueria: cart", JSON.stringify(newCart));
     setCart(newCart);
+    toast.success("Produto removido do carrinho", {
+      position: "bottom-right",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   return (
