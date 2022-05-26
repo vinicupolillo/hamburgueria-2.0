@@ -1,7 +1,7 @@
 import Button from "../../components/button";
 import { useHistory } from "react-router-dom";
 import { useContext } from "react";
-import { Container, Maincontainer } from "./style";
+import { Container, MainContainer } from "./style";
 import Card from "../../components/card";
 import { CartContext } from "../../Providers/cart";
 
@@ -20,7 +20,7 @@ const Cart = () => {
           </div>
         </Container>
       </header>
-      <Maincontainer>
+      <MainContainer>
         <div>
           <Card productList={cart} inCart />
         </div>
@@ -28,7 +28,7 @@ const Cart = () => {
           <p>Preço Total</p>
           <span>{cart.reduce((prev, curr) => prev + curr.price, 0)}</span>
         </div>
-      </Maincontainer>
+      </MainContainer>
     </>
   );
 };

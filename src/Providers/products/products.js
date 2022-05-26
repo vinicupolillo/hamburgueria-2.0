@@ -1,12 +1,12 @@
-import SucoDeMorango from "../../imgs/suco-de-morango";
-import CopoRefri from "../../imgs/copo-de-refri";
-import BatataCompleta from "../../imgs/batata-completa";
-import BatataIndividual from "../../imgs/batata-individual";
-import BigBurguerKenzie from "../../imgs/burguerKenzie";
-import KenzieFrango from "../../imgs/kenzie-frango";
-import MilkShake from "../../imgs/milkShakeKenzie";
-import JarraDeSuco from "../../imgs/jarra-de-suco";
-import BurguerKenzie from "../../imgs/burguer";
+import SucoDeMorango from "../../imgs/suco-de-morango.jpg";
+import CopoRefri from "../../imgs/copo-de-refri.jpg";
+import BatataCompleta from "../../imgs/batata-completa.jpg";
+import BatataIndividual from "../../imgs/batata-individual.jpg";
+import BigBurguerKenzie from "../../imgs/burguerKenzie.jpg";
+import KenzieFrango from "../../imgs/kenzie-frango.jpg";
+import MilkShake from "../../imgs/milkShakeKenzie.jpg";
+import JarraDeSuco from "../../imgs/jarra-de-suco.jpg";
+import BurguerKenzie from "../../imgs/burguer.jpg";
 
 export const products = [
   { id: 1, name: "suco-de-morango", price: 6.0, image: SucoDeMorango },

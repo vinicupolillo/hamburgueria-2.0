@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { ProductContext } from "../../Providers/products";
-import { Container, MainContainer } from "./styles";
+import { Container, MainContainer } from "./style";
 import Button from "../../components/button";
 import Card from "../../components/card";
-import Input from "../../components/imput";
+import Input from "../../components/input";
 
-const Home = () => {
+const Home = ({ setAuthenticated }) => {
   const product = useContext(ProductContext);
   const history = useHistory();
 
@@ -16,9 +16,18 @@ const Home = () => {
         <Container>
           <h1>Hamburgueria 2.0</h1>
           <div>
-            <Input placeholder="Pesquisar"></Input>
+            {/* <Input placeholder="Pesquisar"></Input> */}
             <Button onClick={() => history.push("/cart")}>Carrinho</Button>
             <Button onClick={() => history.push("/login")}>Entrar</Button>
+            <Button
+              onClick={() => {
+                localStorage.clear();
+                setAuthenticated(false);
+                history.push("/login");
+              }}
+            >
+              Meus produtos
+            </Button>
           </div>
         </Container>
       </header>
