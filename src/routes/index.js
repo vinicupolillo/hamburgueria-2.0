@@ -20,7 +20,7 @@ const Routes = () => {
   return (
     <Switch>
       <Route exact path="/">
-        <Home setAuthenticated={setAuthenticated} />
+        <Home authenticated={authenticated} />
       </Route>
       <Route path="/cart">
         <Cart />

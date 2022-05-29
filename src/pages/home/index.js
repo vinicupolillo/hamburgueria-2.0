@@ -6,7 +6,7 @@ import Button from "../../components/button";
 import Card from "../../components/card";
 import Input from "../../components/input";
 
-const Home = ({ setAuthenticated }) => {
+const Home = ({ authenticated }) => {
   const product = useContext(ProductContext);
   const history = useHistory();
 
@@ -21,9 +21,9 @@ const Home = ({ setAuthenticated }) => {
             <Button onClick={() => history.push("/login")}>Entrar</Button>
             <Button
               onClick={() => {
-                localStorage.clear();
-                setAuthenticated(false);
-                history.push("/login");
+                authenticated
+                  ? history.push("/dashboard")
+                  : history.push("/login");
               }}
             >
               Meus produtos

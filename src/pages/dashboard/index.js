@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import Button from "../../components/button";
 import Card from "../../components/card";
@@ -36,9 +36,10 @@ const Dashboard = ({ authenticated, setAuthenticated }) => {
     }
   }
   useEffect(() => loadProducts(), [product]);
-  function registerProduct() {
+  function registerProduct(data) {
+    console.log(data);
     api
-      .post("/products", {
+      .post("/products", data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -64,6 +65,7 @@ const Dashboard = ({ authenticated, setAuthenticated }) => {
               onClick={() => {
                 localStorage.clear();
                 history.push("/login");
+                setAuthenticated(false);
               }}
             >
               Sair

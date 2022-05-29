@@ -34,7 +34,7 @@ const Register = ({ authenticated, setAuthenticated }) => {
       .catch((err) => toast.error("Erro ao criar a conta, tente novamente"));
     setAuthenticated(true);
     if (authenticated) {
-      return <Redirect to="/dashboard" />;
+      return history.push("/login");
     }
   }
 
@@ -89,12 +89,6 @@ const Register = ({ authenticated, setAuthenticated }) => {
             ></Input>
 
             <Button type="submit">Cadastrar</Button>
-            <p>
-              Crie sua conta para saborear muitas delicias e matar sua fome!
-            </p>
-            <Button onClick={() => history.push("./register")}>
-              Cadastrar
-            </Button>
           </form>
         </div>
         {/* </Container> */}

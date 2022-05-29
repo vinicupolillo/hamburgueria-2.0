@@ -6,7 +6,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import api from "../../Services/api";
 import { toast } from "react-toastify";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 // import { Container } from "./style";
 const Login = ({ authenticated, setAuthenticated }) => {
   const history = useHistory();
@@ -38,9 +38,8 @@ const Login = ({ authenticated, setAuthenticated }) => {
         toast.success("Sucesso ao logar na sua conta");
       })
       .catch((err) => toast.error("Email ou senha inválidos"));
-    console.log(authenticated);
     if (authenticated) {
-      return <Redirect to="" />;
+      return history.push("/");
     }
   }
 
