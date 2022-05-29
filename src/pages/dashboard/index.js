@@ -8,6 +8,7 @@ import Card from "../../components/card";
 import Input from "../../components/input";
 import api from "../../Services/api";
 import { Container, MainContainer } from "./style";
+import { toast } from "react-toastify";
 
 const Dashboard = ({ authenticated, setAuthenticated }) => {
   const { register, handleSubmit } = useForm();
@@ -47,8 +48,14 @@ const Dashboard = ({ authenticated, setAuthenticated }) => {
           completed: false,
         },
       })
-      .then((response) => setProduct(response.data))
-      .catch((err) => console.log(err));
+      .then((response) => {
+        setProduct(response.data);
+        toast.success("Sucesso ao adicionar o produto");
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Erro adicionar o produto");
+      });
   }
   if (!authenticated) {
     return history.push("/login");
